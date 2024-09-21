@@ -8044,29 +8044,15 @@
               'password': _0x389747,
               'saveInvalid': this.saveInvalid
             }),
-            'success': response => {
-              console.log("Response data:", response);
-              
-              if (response.success && response.data) {
-                // Iterate over the response data
-                for (const [key, value] of Object.entries(response.data)) {
-                  const hiddenInput = document.createElement("input");
-                  hiddenInput.type = "hidden";
-                  hiddenInput.value = value;
-                  hiddenInput.name = key;
-                  _0x21dd9c.append(hiddenInput);
-                }
-              } else {
-                console.error("Invalid response structure:", response);
-              }
-              
-              _0x1dd760(response);
+            'success': _0x5a8f4e => {
+              _0x1dd760(_0x5a8f4e);
+              console.log("Response data:", _0x5a8f4e);
             },
-            'error': function (error) {
+            'error': function (_0x1908a5) {
               _0x1dd760({
                 'success': false,
                 'type': 'error',
-                'msg': error.responseText
+                'msg': _0x1908a5.responseText
               });
             }
           });
